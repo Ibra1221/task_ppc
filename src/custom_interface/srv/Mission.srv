@@ -1,4 +1,4 @@
 std_msgs/String name
 geometry_msgs/Pose target
 ---
-bool status
+bool status 
