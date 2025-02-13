@@ -23,12 +23,15 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
-ament_export_dependencies(std_msgs geometry_msgs)
+find_package(nav_msgs REQUIRED)
+ament_export_dependencies(std_msgs geometry_msgs nav_msgs)
 rosidl_generate_interfaces(${PROJECT_NAME}
   srv/Gcd.srv
   action/PrintNum.action
   srv/Mission.srv
-  DEPENDENCIES std_msgs geometry_msgs  
+  msg/MissionMsg.msg
+  srv/Plan.srv
+  DEPENDENCIES std_msgs geometry_msgs nav_msgs
 )
 
 if(BUILD_TESTING)
