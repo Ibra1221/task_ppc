@@ -22,6 +22,8 @@ setup(
         'console_scripts': [
             "mission_service = move.mission:main",
             "behavior_node = move.behavior:main",
+            "global_planner = move.global_planner:main",
+            "local_planner = move.local_planner:main",
         ],
     },
 )
